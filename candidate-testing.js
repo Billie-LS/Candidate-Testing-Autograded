@@ -37,7 +37,7 @@ function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly //
   if (candidateAnswer === correctAnswer) {  // test is candidateAnswer = correctAnswer; correctAnswer = "Sally ride"
-    console.log(`Great job! ${candidateAnswer} is the right answer.`);  
+    console.log(`\nGreat job! \n${candidateAnswer} was the first American woman in space.`);  
   } else {
     console.log(`\nYou're answer ${candidateAnswer} is incorrect.\nThe correct answer is: ${correctAnswer}`);
   }
