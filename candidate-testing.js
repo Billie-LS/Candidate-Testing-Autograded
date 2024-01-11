@@ -36,10 +36,10 @@ function askQuestion() {
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly //
-  if (candidateAnswer === "Sally Ride") {
-    console.log(`Great job! ${correctAnswer} is the right answer.`);
+  if (candidateAnswer === correctAnswer) {  // test is candidateAnswer = correctAnswer; correctAnswer = "Sally ride"
+    console.log(`Great job! ${candidateAnswer} is the right answer.`);  
   } else {
-    console.log(`My apologies, you have failed this quiz.  ${candidateAnswer} is incorrect.`);
+    console.log(`You're answer ${candidateAnswer} was incorrect.`);
   }
 
 
