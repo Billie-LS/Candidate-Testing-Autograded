@@ -39,7 +39,7 @@ function gradeQuiz(candidateAnswers) {
   if (candidateAnswer === correctAnswer) {  // test is candidateAnswer = correctAnswer; correctAnswer = "Sally ride"
     console.log(`Great job! ${candidateAnswer} is the right answer.`);  
   } else {
-    console.log(`You're answer ${candidateAnswer} is incorrect.`);
+    console.log(`\nYou're answer ${candidateAnswer} is incorrect.\nThe correct answer is: ${correctAnswer}`);
   }
 
 
