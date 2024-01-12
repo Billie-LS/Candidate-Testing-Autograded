@@ -37,11 +37,24 @@ function askQuestion() {
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly //
-  if (candidateAnswer === correctAnswer) {  // test is candidateAnswer = correctAnswer; correctAnswer = "Sally ride"
-    console.log(`\nGreat job! \n${candidateAnswer} was the first American woman in space.`);  
-  } else {
-    console.log(`\nYou're answer ${candidateAnswer} is incorrect.\nThe correct answer is: ${correctAnswer}`);
-  }
+  // ternary operator 
+  console.log((candidateAnswer === correctAnswer) ?`\nGreat job! \n${candidateAnswer} was the first American woman in space.` : `\nYou're answer ${candidateAnswer} is incorrect.\nThe correct answer is: ${correctAnswer}`);
+
+  // 'switch' statement
+  // switch (candidateAnswer) {
+  //   case correctAnswer:
+  //     console.log(`\nGreat job! \n${candidateAnswer} was the first American woman in space.`);
+  //     break;
+  //   default:
+  //     console.log(`\nYou're answer ${candidateAnswer} is incorrect.\nThe correct answer is: ${correctAnswer}`);
+  // }
+
+  // Standard if/else statement
+  // if (candidateAnswer === correctAnswer) {  // test is candidateAnswer = correctAnswer; correctAnswer = "Sally ride"
+  //   console.log(`\nGreat job! \n${candidateAnswer} was the first American woman in space.`);  
+  // } else {
+  //   console.log(`\nYou're answer ${candidateAnswer} is incorrect.\nThe correct answer is: ${correctAnswer}`);
+  // }
 
 
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
