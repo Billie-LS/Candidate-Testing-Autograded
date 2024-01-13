@@ -16,8 +16,21 @@ let candidateAnswer = '';
 
 
 //TODO: Variables for Part 2
-let questions;
-let correctAnswers;
+
+let questions = [
+  'Who was the first American woman in space? ',  // index 0
+  'True or false: 5 kilometer == 5000 meters? ',  // index 1
+  '(5 + 3)/2 * 10 = ? ',  // index 2
+  "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ",  // index 3
+  'What is the minimum crew size for the ISS? '  // index 4
+];
+let correctAnswers =[
+  "Sally Ride",  // index 0
+  "true",  // index 1
+  "40",  // index 2
+  "Trajectory",  // index 3 
+  "3"  // index 4, text implies datatype number but only works with datatype string
+];
 let candidateAnswers;
 
 
@@ -29,9 +42,14 @@ function askForName() {
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   // console.log(question);
-  candidateAnswer = input.question(question);
-
+  // candidateAnswer = input.question(question);  code for part 1
+  // iterate questions array 
+  for (let i = 0; i < questions.length; i++) {
+    // reassign candidateAnswers to array with each iterations
+    candidateAnswers[i] = input.question(questions[i]);
+  }
 }
+
 
 function gradeQuiz(candidateAnswers) {
 
