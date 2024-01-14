@@ -42,7 +42,7 @@ function askForName() {
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   // console.log(question);
-  // candidateAnswer = input.question(question);  code for part 1
+  // candidateAnswer = input.question(question);  // code for part 1
   
   // iterate questions array 
   for (let i = 0; i < questions.length; i++) {
@@ -60,7 +60,7 @@ function gradeQuiz(candidateAnswers) {
   console.log((candidateAnswer === correctAnswer) ?`\nGreat job! \n${candidateAnswer} was the first American woman in space.` : `\nYou're answer ${candidateAnswer} is incorrect.\nThe correct answer is: ${correctAnswer}`);
 
   // 'switch' statement
-  //  reference https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch
+  // reference https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch
   // switch (candidateAnswer) {
   //   case correctAnswer:
   //     console.log(`\nGreat job! \n${candidateAnswer} was the first American woman in space.`);
