@@ -16,7 +16,7 @@ let candidateAnswer = '';
 
 
 //TODO: Variables for Part 2
-
+// Declare and initialize variable questions to an array
 let questions = [
   'Who was the first American woman in space? ',  // index 0
   'True or false: 5 kilometer == 5000 meters? ',  // index 1
@@ -24,12 +24,13 @@ let questions = [
   "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ",  // index 3
   'What is the minimum crew size for the ISS? '  // index 4
 ];
+// Declare and initialize variable correctAnswers to an array
 let correctAnswers =[
   "Sally Ride",  // index 0
   "true",  // index 1
   "40",  // index 2
   "Trajectory",  // index 3 
-  "3"  // index 4, text implies datatype number but only works with datatype string
+  "3"  // index 4, textbook implies datatype number but only works with datatype string
 ];
 let candidateAnswers;
 
