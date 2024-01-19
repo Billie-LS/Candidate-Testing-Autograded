@@ -4,19 +4,19 @@ const input = require('readline-sync');
 // TODO 2: modify your quiz app to ask 5 questions //
 
 // TODO 1.1a: Define candidateName // 
-// Define candidateName to empty string
+// Declare and initialize variable candidateName to empty string
 let candidateName = '';
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
 // Initialize question 
 let question = "Who was the first American woman in space? ";
 // Initialize correctAnswer
 let correctAnswer = "Sally Ride"
-// set candidateAnswer to empty string
+// Declare and initialize variable candidateAnswer to empty string
 let candidateAnswer = '';
 
 
 //TODO: Variables for Part 2
-// Declare and initialize variable questions to an array
+// Declare and initialize variable questions to an array of questions
 let questions = [
   'Who was the first American woman in space? ',  // index 0
   'True or false: 5 kilometer == 5000 meters? ',  // index 1
@@ -24,15 +24,16 @@ let questions = [
   "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ",  // index 3
   'What is the minimum crew size for the ISS? '  // index 4
 ];
-// Declare and initialize variable correctAnswers to an array
+// Declare and initialize variable correctAnswers to an array of answers
 let correctAnswers =[
   "Sally Ride",  // index 0
-  "true",  // index 1
+  "True",  // index 1
   "40",  // index 2
   "Trajectory",  // index 3 
   "3"  // index 4, textbook implies datatype number but only works with datatype string
 ];
-let candidateAnswers;
+// Declare and initialize variable candidateAnswers to empty string
+let candidateAnswers = '';
 
 
 function askForName() {
@@ -45,7 +46,7 @@ function askQuestion() {
   // console.log(question);
   // candidateAnswer = input.question(question);  // code for part 1
   
-  // iterate questions array 
+  // iterate questions array code for part 2
   for (let i = 0; i < questions.length; i++) {
     // reassign candidateAnswers to array with each iterations
     candidateAnswers[i] = input.question(questions[i]);
