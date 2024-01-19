@@ -61,6 +61,7 @@ function gradeQuiz(candidateAnswers) {
   // reference https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator
   console.log((candidateAnswer === correctAnswer) ?`\nGreat job! \n${candidateAnswer} was the first American woman in space.` : `\nYou're answer ${candidateAnswer} is incorrect.\nThe correct answer is: ${correctAnswer}`);
 
+
   // 'switch' statement
   // reference https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch
   // switch (candidateAnswer) {
