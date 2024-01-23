@@ -27,7 +27,7 @@ let questions = [
 // Declare and initialize variable correctAnswers to an array of answers
 let correctAnswers =[
   "Sally Ride",  // index 0
-  "True",  // index 1
+  "true",  // index 1
   "40",  // index 2
   "Trajectory",  // index 3 
   "3"  // index 4, textbook implies datatype number but only works with datatype string
