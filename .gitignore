@@ -2,4 +2,8 @@
 .vscode/
 **/node_modules
 # /node_modules
-# git rm -r --cached node_modules 
+
+# git rm -r --cached node_modules
+# git filter-repo --path node_modules --invert-paths
+# git commit -am "node_modules be gone!"
+# git push origin master 
