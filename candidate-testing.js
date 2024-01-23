@@ -25,15 +25,9 @@ let questions = [
   'What is the minimum crew size for the ISS? '  // index 4
 ];
 // Declare and initialize variable correctAnswers to an array of answers
-let correctAnswers =[
-  "Sally Ride",  // index 0
-  "true",  // index 1
-  "40",  // index 2
-  "Trajectory",  // index 3 
-  "3"  // index 4, textbook implies datatype number but only works with datatype string
-];
+let correctAnswers =["Sally Ride","true","40","Trajectory","3"]; 
 // Declare and initialize variable candidateAnswers to empty string
-let candidateAnswers = '';
+let candidateAnswers = [];
 
 
 function askForName() {
@@ -59,7 +53,7 @@ function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly //
   // Conditional (ternary) operator 
   // reference https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator
-  console.log((candidateAnswer === correctAnswer) ?`\nGreat job! \n${candidateAnswer} was the first American woman in space.` : `\nYou're answer ${candidateAnswer} is incorrect.\nThe correct answer is: ${correctAnswer}`);
+  console.log((candidateAnswers === correctAnswers) ?`\nGreat job! \n${candidateAnswers} are the correct answers.` : `\nYou're answer ${candidateAnswers} is incorrect.\nThe correct answers are: ${correctAnswers}`);
 
 
   // 'switch' statement
@@ -89,7 +83,7 @@ function gradeQuiz(candidateAnswers) {
 function runProgram() {
   askForName();
   // TODO 1.1c: Greet candidate using their name //
-   console.log(`Hello ${candidateName}, I hope you have studied for this quiz!`);
+  console.log(`Hello ${candidateName}, I hope you have studied for this quiz!`);
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
