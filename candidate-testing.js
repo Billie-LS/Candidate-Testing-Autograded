@@ -25,9 +25,10 @@ let questions = [
   'What is the minimum crew size for the ISS? '  // index 4
 ];
 // Declare and initialize variable correctAnswers to an array of answers
-let correctAnswers =["Sally Ride","true","40","Trajectory","3"]; 
+let correctAnswers =["Sally Ride", "true", "40", "Trajectory", "3"]; 
 // Declare and initialize variable candidateAnswers to empty string
 let candidateAnswers = [];
+
 
 
 function askForName() {
@@ -40,31 +41,38 @@ function askQuestion() {
   // console.log(question);
   // candidateAnswer = input.question(question);  // code for part 1
   
-  // iterate questions array code for part 2
+  // Initialize a variable to track correctness
+  let correct = true;
+
+  // Iterate through each question
   for (let i = 0; i < questions.length; i++) {
-    // reassign candidateAnswers to array with each iterations
+    // Ask the question and assign the response as candidateAnswer
     candidateAnswers[i] = input.question(questions[i]);
+
+    // Check if the current candidate's answer is not equal to the correct answer
+    if (candidateAnswers[i] !== correctAnswers[i]) {
+      // If not equal, set correctness to false
+      correct = false;
+    }
   }
+  return correct;  // Return the correctness information
 }
 
-
 function gradeQuiz(candidateAnswers) {
-
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly //
-  // Conditional (ternary) operator 
-  // reference https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator
-  console.log((candidateAnswers === correctAnswers) ?`\nGreat job! \n${candidateAnswers} are the correct answers.` : `\nYou're answer ${candidateAnswers} is incorrect.\nThe correct answers are: ${correctAnswers}`);
+
+  let areAnswersCorrect = askQuestion();  // Get the correctness information from askQuestion
+
+  // Directly use the result of askQuestion in the condition
+  // Directly use the result stored in the variable in the condition
+  console.log(
+    areAnswersCorrect
+      ? `\nGreat job! \n${candidateAnswers} are the correct answers.`
+      : `\nYou're answer ${candidateAnswers} is incorrect.\nThe correct answers are: ${correctAnswers}`
+  );
+  
 
 
-  // 'switch' statement
-  // reference https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch
-  // switch (candidateAnswer) {
-  //   case correctAnswer:
-  //     console.log(`\nGreat job! \n${candidateAnswer} was the first American woman in space.`);
-  //     break;
-  //   default:
-  //     console.log(`\nYou're answer ${candidateAnswer} is incorrect.\nThe correct answer is: ${correctAnswer}`);
-  // }
 
   // Standard if/else statement
   // if (candidateAnswer === correctAnswer) {  // test is candidateAnswer = correctAnswer; correctAnswer = "Sally ride"
@@ -73,9 +81,7 @@ function gradeQuiz(candidateAnswers) {
   //   console.log(`\nYou're answer ${candidateAnswer} is incorrect.\nThe correct answer is: ${correctAnswer}`);
   // }
 
-
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
-
 
   return grade;
 }
