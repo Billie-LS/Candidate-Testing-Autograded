@@ -36,7 +36,7 @@ let correctAnswers =[
 let candidateAnswers = [];
 
 
-
+// prompt candidate for their name
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
   candidateName = input.question("Enter your name: ");
@@ -44,8 +44,6 @@ function askForName() {
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-  // console.log(question);
-  // candidateAnswer = input.question(question);  // code for part 1
 
   let response = '';
   // Iterate through each question
@@ -62,27 +60,37 @@ function askQuestion() {
 function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly //
 
+  // initialize counter variable for correct answers count
   let correctAnswer = 0;
+
+  // Loop through each item in the candidate's answers
   for (let i = 0; i < candidateAnswers.length; i++){
-    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase())  // make case-insensitive
-      correctAnswer+=1
+    // Check candidateAnswer equal to correctAnswers, make case-insensitive
+    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
+      // Increment correct answer counter
+      correctAnswer+=1;
       console.log(
+        // check strict equality each item candidateAnswers to each item correctAnswers, loop through arrays
+        // ternary operator
         candidateAnswers[i] === correctAnswers[i]
+          // Output answer correct or answer incorrect and here is correct 
           ? `\nGreat job! \n${candidateAnswers[i]} is the correct answer.`
           : `\nYou're answer ${candidateAnswers[i]} is incorrect.\nThe correct answer is: ${correctAnswers[i]}`
       );
+    }
   }
   
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
-  correctAnswer > 0
-    ? grade = (correctAnswer / 5) * 100
-    : grade = 0
+  // Calculate the grade based on the number of correct answers
+    grade = (correctAnswer / 5) * 100
+    // output score and pass or fail
     console.log(
-      grade > 79
+      // ternary operator 80 or above is pass
+      grade >= 80
       ? `\nGreat job! You have achieved a passing score with \n${grade}% correct.`
       : `\nUnfortunately you have not passed this examination. \n${grade}% is a failing score.`
     )
-  
+  // Return grade calculation
   return grade;
 }
 
