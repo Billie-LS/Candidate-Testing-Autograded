@@ -25,7 +25,13 @@ let questions = [
   'What is the minimum crew size for the ISS? '  // index 4
 ];
 // Declare and initialize variable correctAnswers to an array of answers
-let correctAnswers =["Sally Ride", "true", "40", "Trajectory", "3"]; 
+let correctAnswers =[
+  "Sally Ride", 
+  "true", 
+  "40", 
+  "Trajectory", 
+  "3"
+]; 
 // Declare and initialize variable candidateAnswers to empty array
 let candidateAnswers = [];
 
@@ -45,10 +51,9 @@ function askQuestion() {
   // Iterate through each question
   // candidateAnswer.push(input.question(questions[i]))
   for (let i = 0; i < questions.length; i++) {
-    // candidateAnswer.push(input.question(questions[i]))
-    // Ask the question and assign the response as candidateAnswer
+    // Ask the question and assign input answer to response
     response = input.question(questions[i]);
-    // candidateAnswers[i] = input.question(questions[i]);
+    // add value of response to array candidateAnswers
     candidateAnswers.push(response);
   }
   return candidateAnswers;
@@ -57,33 +62,27 @@ function askQuestion() {
 function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly //
 
-  // let areAnswersCorrect = askQuestion();  // Get the correctness information from askQuestion
-  correctAnswer = 0;
+  let correctAnswer = 0;
   for (let i = 0; i < candidateAnswers.length; i++){
-    if (candidateAnswer[i] === correctAnswers[i]);
+    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase())  // make case-insensitive
       correctAnswer+=1
+      console.log(
+        candidateAnswers[i] === correctAnswers[i]
+          ? `\nGreat job! \n${candidateAnswers[i]} is the correct answer.`
+          : `\nYou're answer ${candidateAnswers[i]} is incorrect.\nThe correct answer is: ${correctAnswers[i]}`
+      );
   }
-
-  // Directly use the result of askQuestion in the condition
-  // Directly use the result stored in the variable in the condition
-  console.log(
-    areAnswersCorrect
-      ? `\nGreat job! \n${candidateAnswers} are the correct answers.`
-      : `\nYou're answer ${candidateAnswers} is incorrect.\nThe correct answers are: ${correctAnswers}`
-  );
   
-
-
-
-  // Standard if/else statement
-  // if (candidateAnswer === correctAnswer) {  // test is candidateAnswer = correctAnswer; correctAnswer = "Sally ride"
-  //   console.log(`\nGreat job! \n${candidateAnswer} was the first American woman in space.`);  
-  // } else {
-  //   console.log(`\nYou're answer ${candidateAnswer} is incorrect.\nThe correct answer is: ${correctAnswer}`);
-  // }
-
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
-
+  correctAnswer > 0
+    ? grade = (correctAnswer / 5) * 100
+    : grade = 0
+    console.log(
+      grade > 79
+      ? `\nGreat job! You have achieved a passing score with \n${grade}% correct.`
+      : `\nUnfortunately you have not passed this examination. \n${grade}% is a failing score.`
+    )
+  
   return grade;
 }
 
