@@ -26,7 +26,7 @@ let questions = [
 ];
 // Declare and initialize variable correctAnswers to an array of answers
 let correctAnswers =["Sally Ride", "true", "40", "Trajectory", "3"]; 
-// Declare and initialize variable candidateAnswers to empty string
+// Declare and initialize variable candidateAnswers to empty array
 let candidateAnswers = [];
 
 
@@ -40,28 +40,29 @@ function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   // console.log(question);
   // candidateAnswer = input.question(question);  // code for part 1
-  
-  // Initialize a variable to track correctness
-  let correct = true;
 
+  let response = '';
   // Iterate through each question
+  // candidateAnswer.push(input.question(questions[i]))
   for (let i = 0; i < questions.length; i++) {
+    // candidateAnswer.push(input.question(questions[i]))
     // Ask the question and assign the response as candidateAnswer
-    candidateAnswers[i] = input.question(questions[i]);
-
-    // Check if the current candidate's answer is not equal to the correct answer
-    if (candidateAnswers[i] !== correctAnswers[i]) {
-      // If not equal, set correctness to false
-      correct = false;
-    }
+    response = input.question(questions[i]);
+    // candidateAnswers[i] = input.question(questions[i]);
+    candidateAnswers.push(response);
   }
-  return correct;  // Return the correctness information
+  return candidateAnswers;
 }
 
 function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly //
 
-  let areAnswersCorrect = askQuestion();  // Get the correctness information from askQuestion
+  // let areAnswersCorrect = askQuestion();  // Get the correctness information from askQuestion
+  correctAnswer = 0;
+  for (let i = 0; i < candidateAnswers.length; i++){
+    if (candidateAnswer[i] === correctAnswers[i]);
+      correctAnswer+=1
+  }
 
   // Directly use the result of askQuestion in the condition
   // Directly use the result stored in the variable in the condition
@@ -91,7 +92,11 @@ function runProgram() {
   // TODO 1.1c: Greet candidate using their name //
   console.log(`Hello ${candidateName}, I hope you have studied for this quiz!`);
   askQuestion();
+  // candidateAnswer = askQuestion();
+  // console.log(candidateAnswer);
   gradeQuiz(this.candidateAnswers);
+  
+
 }
 
 // ----------- Don't write any code or change any code below this line ---------- //
