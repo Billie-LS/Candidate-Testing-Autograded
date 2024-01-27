@@ -99,6 +99,8 @@ function runProgram() {
   // TODO 1.1c: Greet candidate using their name //
   console.log(`Hello ${candidateName}, I hope you have studied for this quiz!`);
   askQuestion();
+  // candidateAnswer = askQuestion();
+  // console.log(candidateAnswer);
   gradeQuiz(this.candidateAnswers);
   
 
