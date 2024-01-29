@@ -79,7 +79,6 @@ function gradeQuiz(candidateAnswers) {
       );
     }
   }
-  
   return giveScore(correctCount);
 }
 
