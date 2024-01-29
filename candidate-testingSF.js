@@ -75,7 +75,7 @@ function gradeQuiz(candidateAnswers) {
         candidateAnswers[i] === correctAnswers[i]
           // Output answer correct or answer incorrect and here is correct 
           ? `\nGreat job! \n${candidateAnswers[i]} is the correct answer.`
-          : `\nYou're answer ${candidateAnswers[i]} is incorrect.\nThe correct answer is: ${correctAnswers[i]}`
+          : `\nYour answer ${candidateAnswers[i]} is incorrect.\nThe correct answer is: ${correctAnswers[i]}`
       );
     }
   }
